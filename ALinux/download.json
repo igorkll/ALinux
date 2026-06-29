@@ -10,7 +10,7 @@
         "url": "https://lua.org/ftp/lua-5.3.6.tar.gz"
     },
     {
-        "type": "unpack-archive",
+        "type": "unpack-tar-gz",
         "name": "source_lua",
 
         "archive": "source_lua.tar.gz"

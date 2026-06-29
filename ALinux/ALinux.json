@@ -33,7 +33,15 @@
             "sources-dirs": ["source_lua/lua-5.3.6/src"],
             "sources-dirs-extensions": [".c", ".cpp"],
             "sources-dirs-recursive": true,
-            "sources-dirs-exclude": ["sources/lua-5.3.6/src/luac.c"]
+            "sources-dirs-exclude": ["luac.c"],
+
+            "forkbase": true
+        },
+        {
+            "fork": true,
+            "name": "luac",
+
+            "sources-dirs-exclude": ["lua.c"]
         },
 
         // --------------------------------- rootfs
@@ -50,7 +58,10 @@
 
             "items": [
                 ["kernel.img", "/boot/kernel.img"],
-                ["lua", "/bin/lua", [0, 0, "755"]]
+                ["init", "/init", [0, 0, "755"]],
+
+                ["lua", "/bin/lua", [0, 0, "755"]],
+                ["luac", "/bin/luac", [0, 0, "755"]]
             ]
         },
         {
@@ -72,7 +83,7 @@
             "name": "ALinux.img",
             "export": true,
 
-            "size": "auto + (1 * 1024 * 1024)",
+            "size": "auto + (10 * 1024 * 1024)",
 
             "partitionTable": "dos",
             "partitions": [
@@ -86,7 +97,6 @@
                 "modules": [
                     "normal",
                     "part_msdos",
-                    "part_gpt",
                     "ext2",
                     "configfile"
                 ]
