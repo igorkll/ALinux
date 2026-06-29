@@ -1,0 +1,96 @@
+{
+    "architectures": [
+        "i386"
+    ],
+
+    "builditems": [
+        {
+            "type": "include",
+            "file": "download.json"
+        },
+        {
+            "type": "include",
+            "file": "kernel.json"
+        },
+
+        // --------------------------------- lua
+        {
+            "type": "gcc-build",
+            "name": "lua",
+            "export": false,
+
+            "CFLAGS": [
+                "-O2",
+                "-ffreestanding",
+                "-Wall",
+                "-Wextra"
+            ],
+            "LDFLAGS": [
+                "-static",
+                "-lm"
+            ],
+
+            "sources-dirs": ["source_lua/lua-5.3.6/src"],
+            "sources-dirs-extensions": [".c", ".cpp"],
+            "sources-dirs-recursive": true,
+            "sources-dirs-exclude": ["sources/lua-5.3.6/src/luac.c"]
+        },
+
+        // --------------------------------- rootfs
+        {
+            "type": "directory",
+            "name": "rootfs",
+            "export": false,
+
+            "directory": [
+                ["/boot", [0, 0, "755"]],
+                ["/bin", [0, 0, "755"]],
+                ["/home", [0, 0, "755"]]
+            ],
+
+            "items": [
+                ["kernel.img", "/boot/kernel.img"],
+                ["lua", "/bin/lua", [0, 0, "755"]]
+            ]
+        },
+        {
+            "type": "filesystem",
+            "name": "rootfs.img",
+            "export": false,
+
+            "source": "rootfs",
+
+            "fs_type": "ext4",
+            "size": "(auto * 1.2) + (100 * 1024 * 1024)",
+            "minsize": "64MB",
+            "label": "rootfs"
+        },
+        
+        // --------------------------------- bootable image (BIOS)
+        {
+            "type": "full-disk-image",
+            "name": "ALinux.img",
+            "export": true,
+
+            "size": "auto + (1 * 1024 * 1024)",
+
+            "partitionTable": "dos",
+            "partitions": [
+                ["rootfs.img", "linux"]
+            ],
+
+            "bootloader": {
+                "type": "grub",
+                "config": "grub_fastboot.cfg",
+                "boot": 0,
+                "modules": [
+                    "normal",
+                    "part_msdos",
+                    "part_gpt",
+                    "ext2",
+                    "configfile"
+                ]
+            }
+        }
+    ]
+}

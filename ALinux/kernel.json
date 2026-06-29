@@ -1,0 +1,15 @@
+[
+    {
+        "type": "kernel",
+        "name": "kernel.img",
+        "export": false,
+
+        "kernel_source_url": "https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.tar.xz",
+        "kernel_output_file": "bzImage",
+
+        "kernel_config_changes_files": [
+            "kernel_config_changes.txt",
+            "kernel_config_changes_x86.txt"
+        ]
+    }
+]
