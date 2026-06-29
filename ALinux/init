@@ -1,3 +1,6 @@
 #!/bin/lua
 
-os.execute("lua")
+while true do
+    print("test")
+    print(os.execute("/bin/lua"))
+end

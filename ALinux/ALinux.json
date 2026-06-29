@@ -27,6 +27,7 @@
             ],
             "LDFLAGS": [
                 "-static",
+                "-Wl,--defsym=fmod=__ieee754_fmod", //FUCK.....
                 "-lm"
             ],
 
@@ -50,7 +51,7 @@
             "name": "rootfs",
             "export": false,
 
-            "directory": [
+            "directories": [
                 ["/boot", [0, 0, "755"]],
                 ["/bin", [0, 0, "755"]],
                 ["/home", [0, 0, "755"]]
