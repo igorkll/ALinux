@@ -1,8 +1,24 @@
 [
     {
+        "type": "directory",
+        "name": "sysroot1",
+        "export": false,
+
+        "directories": [
+            ["/usr", [0, 0, "755"]]
+        ],
+
+        "items": [
+            ["kernel_headers", "/usr"]
+        ]
+    },
+    {
         "type": "build-configure-make",
         "name": "glibc",
         "export": false,
+
+        "sysroot": "sysroot1",
+        "sysroot_field_name": "with-sysroot",
 
         "source": "source_glibc",
         "prefix": "/usr",
@@ -16,12 +32,7 @@
         "name": "sysroot",
         "export": false,
 
-        "directories": [
-            ["/usr", [0, 0, "755"]]
-        ],
-
         "items": [
-            ["kernel_headers", "/usr"],
             ["glibc", "/"]
         ]
     }
