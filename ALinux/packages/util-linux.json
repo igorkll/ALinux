@@ -1,0 +1,35 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_util_linux.tar.gz",
+        "export": false,
+
+        "url": "https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_util_linux",
+
+        "strip_components": 1,
+
+        "archive": "source_util_linux.tar.gz"
+    },
+
+    // --------------------- build
+    {
+        "type": "build-configure-make",
+        "name": "util_linux",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct_cmd": true,
+
+        "source": "source_util_linux",
+        "prefix": "/usr",
+
+        "CFLAGS": ["-Wno-discarded-qualifiers"],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls", "--without-python", "--without-systemd", "--without-systemdsystemunitdir", "--disable-liblastlog2"]
+    }
+]

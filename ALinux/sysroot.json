@@ -15,6 +15,21 @@
 
     // --------------------------------- glibc
     {
+        "type": "download",
+        "name": "source_glibc.tar.gz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/glibc/glibc-2.39.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_glibc",
+
+        "strip_components": 1,
+
+        "archive": "source_glibc.tar.gz"
+    },
+    {
         "type": "build-configure-make",
         "name": "glibc",
         "export": false,
@@ -44,6 +59,21 @@
     },
 
     // --------------------------------- ncurses
+    {
+        "type": "download",
+        "name": "source_ncurses.tar.gz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_ncurses",
+
+        "strip_components": 1,
+
+        "archive": "source_ncurses.tar.gz"
+    },
     {
         "type": "build-configure-make",
         "name": "ncurses",

@@ -1,0 +1,35 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_bash.tar.gz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/bash/bash-5.2.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_bash",
+
+        "strip_components": 1,
+
+        "archive": "source_bash.tar.gz"
+    },
+
+    // --------------------- build
+    {
+        "type": "build-configure-make",
+        "name": "bash",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
+
+        "source": "source_bash",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
+    }
+]

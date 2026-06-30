@@ -6,10 +6,6 @@
     "builditems": [
         {
             "type": "include",
-            "file": "download.json"
-        },
-        {
-            "type": "include",
             "file": "kernel.json"
         },
         {
@@ -18,7 +14,19 @@
         },
         {
             "type": "include",
-            "file": "packages.json"
+            "file": "packages/lua.json"
+        },
+        {
+            "type": "include",
+            "file": "packages/bash.json"
+        },
+        {
+            "type": "include",
+            "file": "packages/coreutils.json"
+        },
+        {
+            "type": "include",
+            "file": "packages/util-linux.json"
         },
 
         // --------------------------------- rootfs
@@ -36,12 +44,10 @@
                 ["sysroot", "/"],
                 ["kernel.img", "/boot/kernel.img"],
 
-                ["init", "/init", [0, 0, "755"]],
-                ["session", "/bin/session", [0, 0, "755"]],
+                ["files/init", "/init", [0, 0, "755"]],
+                ["files/session", "/bin/session", [0, 0, "755"]],
 
-                ["lua", "/bin/lua", [0, 0, "755"]],
-                ["luac", "/bin/luac", [0, 0, "755"]],
-
+                ["lua", "/"],
                 ["coreutils", "/"],
                 ["util_linux", "/"],
                 ["bash", "/"]

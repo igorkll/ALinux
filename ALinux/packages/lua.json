@@ -1,0 +1,71 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_lua.tar.gz",
+        "export": false,
+
+        "url": "https://lua.org/ftp/lua-5.3.6.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_unpacked_lua",
+
+        "strip_components": 1,
+
+        "archive": "source_lua.tar.gz"
+    },
+    {
+        "type": "from-directory",
+        "name": "source_lua",
+        "export": false,
+
+        "source": "source_unpacked_lua",
+        "path": "/src"
+    },
+
+    // --------------------- build
+    {
+        "type": "gcc-build",
+        "name": "bin_lua",
+        "export": false,
+
+        "sysroot": "sysroot",
+
+        "CFLAGS": [
+            "-O2",
+            "-Wall",
+            "-Wextra"
+        ],
+        "LDFLAGS": [
+            "-lm"
+        ],
+
+        "sources-dirs": ["source_lua"],
+        "sources-dirs-extensions": [".c", ".cpp"],
+        "sources-dirs-recursive": true,
+        "sources-dirs-exclude": ["luac.c"],
+
+        "forkbase": true
+    },
+    {
+        "fork": true,
+        "name": "bin_luac",
+
+        "sources-dirs-exclude": ["lua.c"]
+    },
+    {
+        "type": "directory",
+        "name": "lua",
+        "export": false,
+
+        "directories": [
+            ["/bin", [0, 0, "755"]]
+        ],
+
+        "items": [
+            ["bin_lua", "/bin/lua"],
+            ["bin_luac", "/bin/luac"]
+        ]
+    }
+]

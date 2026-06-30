@@ -1,0 +1,35 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_coreutils.tar.gz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/coreutils/coreutils-9.5.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_coreutils",
+
+        "strip_components": 1,
+
+        "archive": "source_coreutils.tar.gz"
+    },
+
+    // --------------------- build
+    {
+        "type": "build-configure-make",
+        "name": "coreutils",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
+
+        "source": "source_coreutils",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
+    }
+]
