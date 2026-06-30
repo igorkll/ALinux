@@ -1,3 +1,22 @@
 #!/usr/bin/bash
 
-/usr/bin/bash
+# ------ mount points
+
+mkdir -p /proc /sys /dev /tmp
+mount -t proc proc /proc
+mount -t sysfs sys /sys
+mount -t devtmpfs dev /dev
+mount -t tmpfs tmp /tmp
+
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts
+
+# ------ launch vt programs
+
+for i in 1 2 3 4 5 6; do
+    setsid bash -i </dev/tty$i >/dev/tty$i 2>&1 &
+done
+
+# ------ wait
+
+wait
