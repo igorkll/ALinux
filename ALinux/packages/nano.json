@@ -24,10 +24,8 @@
 
         "sysroot": "sysroot",
         "sysroot_gcc_disable_default": true,
-        "sysroot_gcc_env": true,
-
-        "sysroot_set_env_PKG_CONFIG_SYSROOT_DIR": true,
-        "sysroot_set_env_PKG_CONFIG_LIBDIR": true,
+        "sysroot_gcc_direct": true,
+        "sysroot_auto_libs": true,
 
         "source": "source_nano",
         "prefix": "/usr",
@@ -36,10 +34,6 @@
         "LDFLAGS": [],
         "FLAGS": [
             "--disable-nls"
-        ],
-
-        "env_changes": {
-            "ac_cv_prog_NCURSESW_CONFIG": false
-        }
+        ]
     }
 ]
