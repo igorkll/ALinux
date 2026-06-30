@@ -59,6 +59,20 @@
             "FLAGS": ["--enable-static-link", "--disable-nls"]
         },
 
+        // --------------------------------- util linux
+        {
+            "type": "build-configure-make",
+            "name": "util_linux",
+            "export": false,
+
+            "source": "source_util_linux",
+            "prefix": "/",
+
+            "CFLAGS": [],
+            "LDFLAGS": ["-static"],
+            "FLAGS": ["--disable-login", "--disable-nls", "--without-python", "--without-systemdsystemunitdir"]
+        },
+
         // --------------------------------- rootfs
         {
             "type": "directory",
@@ -78,6 +92,7 @@
                 ["lua", "/bin/lua", [0, 0, "755"]],
                 ["luac", "/bin/luac", [0, 0, "755"]],
 
+                ["util_linux", "/"],
                 ["bash", "/"]
             ]
         },

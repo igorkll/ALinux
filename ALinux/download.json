@@ -9,7 +9,7 @@
     },
     {
         "type": "unpack-tar-gz",
-        "name": "source_raw_lua",
+        "name": "source_unpacked_lua",
 
         "archive": "source_lua.tar.gz"
     },
@@ -18,7 +18,7 @@
         "name": "source_lua",
         "export": false,
 
-        "source": "source_raw_lua",
+        "source": "source_unpacked_lua",
         "path": "/lua-5.3.6/src"
     },
 
@@ -32,7 +32,7 @@
     },
     {
         "type": "unpack-tar-gz",
-        "name": "source_raw_bash",
+        "name": "source_unpacked_bash",
 
         "archive": "source_bash.tar.gz"
     },
@@ -41,7 +41,30 @@
         "name": "source_bash",
         "export": false,
 
-        "source": "source_raw_bash",
+        "source": "source_unpacked_bash",
         "path": "/bash-5.2"
+    },
+
+    // util-linux
+    {
+        "type": "download",
+        "name": "source_util_linux.tar.gz",
+        "export": false,
+
+        "url": "https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.3.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_unpacked_util_linux",
+
+        "archive": "source_util_linux.tar.gz"
+    },
+    {
+        "type": "from-directory",
+        "name": "source_util_linux",
+        "export": false,
+
+        "source": "source_unpacked_util_linux",
+        "path": "/util-linux-2.41.3"
     }
 ]
