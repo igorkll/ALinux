@@ -1,6 +1,7 @@
-#!/bin/lua
+#!/bin/bash
 
-while true do
-    print("test")
-    print(os.execute("/bin/lua"))
-end
+for i in {1..6}; do
+    setsid bash -i </dev/tty$i >/dev/tty$i 2>&1 &
+done
+
+wait
