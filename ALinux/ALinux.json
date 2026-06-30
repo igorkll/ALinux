@@ -35,9 +35,10 @@
 
             "items": [
                 ["sysroot", "/"],
-
                 ["kernel.img", "/boot/kernel.img"],
+
                 ["init", "/init", [0, 0, "755"]],
+                ["session", "/bin/session", [0, 0, "755"]],
 
                 ["lua", "/bin/lua", [0, 0, "755"]],
                 ["luac", "/bin/luac", [0, 0, "755"]],
