@@ -1,7 +1,5 @@
-
-
-
 [
+    // lua
     {
         "type": "download",
         "name": "source_lua.tar.gz",
@@ -11,8 +9,39 @@
     },
     {
         "type": "unpack-tar-gz",
-        "name": "source_lua",
+        "name": "source_raw_lua",
 
         "archive": "source_lua.tar.gz"
+    },
+    {
+        "type": "from-directory",
+        "name": "source_lua",
+        "export": false,
+
+        "source": "source_raw_lua",
+        "path": "/lua-5.3.6/src"
+    },
+
+    // bash
+    {
+        "type": "download",
+        "name": "source_bash.tar.gz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/bash/bash-5.2.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_raw_bash",
+
+        "archive": "source_bash.tar.gz"
+    },
+    {
+        "type": "from-directory",
+        "name": "source_bash",
+        "export": false,
+
+        "source": "source_raw_bash",
+        "path": "/bash-5.2"
     }
 ]
