@@ -53,6 +53,8 @@
                 "/usr/share/doc",
                 "/usr/share/man",
                 "/usr/share/info",
+                "/usr/share/locale",
+                "/usr/share/i18n",
                 "/var"
             ]
         },
