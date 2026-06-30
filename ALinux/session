@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+echo "ALinux 1.0"
+bash
