@@ -57,7 +57,7 @@
                 ["/usr/bin", "/bin"],
                 ["/usr/lib", "/lib"]
             ],
-            
+
             "delete": [
                 "/usr/include",
                 "/usr/bin/bashbug",
@@ -77,7 +77,7 @@
             "source": "rootfs",
 
             "fs_type": "ext4",
-            "size": "512MB",
+            "size": "128MB",
             "label": "rootfs"
         },
         
