@@ -24,19 +24,17 @@
 
         "sysroot": "sysroot",
         "sysroot_gcc_disable_default": true,
-        "sysroot_gcc_env": true,
         "sysroot_gcc_direct": true,
         "sysroot_auto_libs": true,
+
+        "sysroot_set_env_PKG_CONFIG_SYSROOT_DIR": true,
+        "sysroot_set_env_PKG_CONFIG_LIBDIR": true,
 
         "source": "source_nano",
         "prefix": "/usr",
 
         "CFLAGS": [],
         "LDFLAGS": [],
-        "FLAGS": ["--disable-nls"],
-
-        "change_env": {
-            "PKG_CONFIG": ""
-        }
+        "FLAGS": ["--disable-nls"]
     }
 ]
