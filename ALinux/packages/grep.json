@@ -1,0 +1,36 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_grep.tar.gz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/grep/grep-3.12.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_grep",
+
+        "strip_components": 1,
+
+        "archive": "source_grep.tar.gz"
+    },
+
+    // --------------------- build
+    {
+        "type": "build-configure-make",
+        "name": "grep",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
+
+        "source": "source_grep",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
+    }
+]
+

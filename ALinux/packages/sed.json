@@ -1,0 +1,35 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_sed.tar.gz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/sed/sed-4.10.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_sed",
+
+        "strip_components": 1,
+
+        "archive": "source_sed.tar.gz"
+    },
+
+    // --------------------- build
+    {
+        "type": "build-configure-make",
+        "name": "sed",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
+
+        "source": "source_sed",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
+    }
+]

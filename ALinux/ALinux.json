@@ -12,6 +12,8 @@
             "type": "include",
             "file": "sysroot.json"
         },
+
+        // --------------------------------- packages
         {
             "type": "include",
             "file": "packages/lua.json"
@@ -27,6 +29,18 @@
         {
             "type": "include",
             "file": "packages/util-linux.json"
+        },
+        {
+            "type": "include",
+            "file": "packages/grep.json"
+        },
+        {
+            "type": "include",
+            "file": "packages/sed.json"
+        },
+        {
+            "type": "include",
+            "file": "packages/findutils.json"
         },
 
         // --------------------------------- rootfs
@@ -48,9 +62,12 @@
                 ["files/session", "/bin/session", [0, 0, "755"]],
 
                 ["lua", "/"],
+                ["bash", "/"],
                 ["coreutils", "/"],
                 ["util_linux", "/"],
-                ["bash", "/"]
+                ["grep", "/"],
+                ["sed", "/"],
+                ["findutils", "/"]
             ],
 
             "move_after_items": [
@@ -82,7 +99,7 @@
             "source": "rootfs",
 
             "fs_type": "ext4",
-            "size": "128MB",
+            "size": "256MB",
             "label": "rootfs"
         },
         

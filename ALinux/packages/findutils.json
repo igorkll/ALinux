@@ -1,0 +1,35 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_findutils.tar.xz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/findutils/findutils-4.10.0.tar.xz"
+    },
+    {
+        "type": "unpack-tar-auto",
+        "name": "source_findutils",
+
+        "strip_components": 1,
+
+        "archive": "source_findutils.tar.xz"
+    },
+
+    // --------------------- build
+    {
+        "type": "build-configure-make",
+        "name": "findutils",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
+
+        "source": "source_findutils",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
+    }
+]
