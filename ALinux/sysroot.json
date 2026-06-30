@@ -9,7 +9,7 @@
 
         "CFLAGS": [],
         "LDFLAGS": [],
-        "FLAGS": []
+        "FLAGS": ["--disable-cet", "--disable-werror"]
     },
     {
         "type": "directory",
