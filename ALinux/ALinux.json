@@ -68,9 +68,9 @@
             "source": "source_util_linux",
             "prefix": "/",
 
-            "CFLAGS": [],
+            "CFLAGS": ["-Wno-discarded-qualifiers"],
             "LDFLAGS": ["-static"],
-            "FLAGS": ["--disable-login", "--disable-nls", "--without-python", "--without-systemdsystemunitdir"]
+            "FLAGS": ["--disable-login", "--disable-nls", "--without-python", "--without-systemd", "--without-systemdsystemunitdir"]
         },
 
         // --------------------------------- rootfs
