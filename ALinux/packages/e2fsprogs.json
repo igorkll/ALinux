@@ -1,0 +1,35 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_e2fsprogs.tar.xz",
+        "export": false,
+
+        "url": "https://www.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.47.0/e2fsprogs-1.47.0.tar.xz"
+    },
+    {
+        "type": "unpack-tar-auto",
+        "name": "source_e2fsprogs",
+
+        "strip_components": 1,
+
+        "archive": "source_e2fsprogs.tar.xz"
+    },
+
+    // --------------------- build
+    {
+        "type": "build-configure-make",
+        "name": "e2fsprogs",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
+
+        "source": "source_e2fsprogs",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
+    }
+]

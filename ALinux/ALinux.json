@@ -42,6 +42,14 @@
             "type": "include",
             "file": "packages/findutils.json"
         },
+        {
+            "type": "include",
+            "file": "packages/e2fsprogs.json"
+        },
+        {
+            "type": "include",
+            "file": "packages/nano.json"
+        },
 
         // --------------------------------- rootfs
         {
@@ -67,7 +75,9 @@
                 ["util_linux", "/"],
                 ["grep", "/"],
                 ["sed", "/"],
-                ["findutils", "/"]
+                ["findutils", "/"],
+                ["e2fsprogs", "/"],
+                ["nano", "/"]
             ],
 
             "move_after_items": [

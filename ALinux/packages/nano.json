@@ -1,0 +1,36 @@
+[
+    // --------------------- download
+    {
+        "type": "download",
+        "name": "source_nano.tar.xz",
+        "export": false,
+
+        "url": "https://www.nano-editor.org/dist/v9/nano-9.1.tar.xz"
+    },
+    {
+        "type": "unpack-tar-auto",
+        "name": "source_nano",
+
+        "strip_components": 1,
+
+        "archive": "source_nano.tar.xz"
+    },
+
+    // --------------------- build
+    {
+        "type": "build-configure-make",
+        "name": "nano",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
+        "sysroot_auto_libs": true,
+
+        "source": "source_nano",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
+    }
+]
