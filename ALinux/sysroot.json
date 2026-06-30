@@ -4,11 +4,6 @@
         "name": "sysroot1",
         "export": false,
 
-        "symlinks": [
-            ["/usr/bin", "/bin"],
-            ["/usr/lib", "/lib"]
-        ],
-
         "directories": [
             ["/usr", [0, 0, "755"]]
         ],

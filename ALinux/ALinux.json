@@ -48,6 +48,16 @@
                 ["bash", "/"]
             ],
 
+            "move_after_items": [
+                ["/bin", "/usr/bin"],
+                ["/lib", "/usr/lib"]
+            ],
+
+            "symlinks_after_items": [
+                ["/usr/bin", "/bin"],
+                ["/usr/lib", "/lib"]
+            ],
+            
             "delete": [
                 "/usr/include",
                 "/usr/bin/bashbug",
