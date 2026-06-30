@@ -23,7 +23,10 @@
         "source": "source_glibc",
         "prefix": "/usr",
 
-        "CFLAGS": [],
+        "CFLAGS": [
+            "-U_FORTIFY_SOURCE",
+            "-O2"
+        ],
         "LDFLAGS": [],
         "FLAGS": ["--disable-cet", "--disable-werror"]
     },
