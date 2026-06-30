@@ -87,7 +87,7 @@
 
         "CFLAGS": [],
         "LDFLAGS": [],
-        "FLAGS": ["--with-shared", "--without-cxx", "--without-cxx-binding", "--without-ada"]
+        "FLAGS": ["--with-shared", "--without-cxx", "--without-cxx-binding", "--without-ada", "--enable-pc-files", "--with-pkg-config-libdir=/usr/lib/pkgconfig"]
     },
     {
         "type": "directory",
