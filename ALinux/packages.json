@@ -60,7 +60,7 @@
         "prefix": "/",
 
         "CFLAGS": ["-Wno-discarded-qualifiers"],
-        "LDFLAGS": ["-static"],
-        "FLAGS": ["--disable-login", "--disable-nls", "--without-python", "--without-systemd", "--without-systemdsystemunitdir", "--disable-liblastlog2"]
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls", "--disable-login", "--without-python", "--without-systemd", "--without-systemdsystemunitdir", "--disable-liblastlog2"]
     }
 ]

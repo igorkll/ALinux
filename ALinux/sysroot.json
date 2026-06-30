@@ -12,6 +12,8 @@
             ["kernel_headers", "/usr"]
         ]
     },
+
+    // --------------------------------- glibc
     {
         "type": "build-configure-make",
         "name": "glibc",
@@ -28,7 +30,34 @@
             "-O2"
         ],
         "LDFLAGS": [],
-        "FLAGS": ["--disable-cet", "--disable-werror"]
+        "FLAGS": ["--disable-nls", "--disable-cet", "--disable-werror"]
+    },
+    {
+        "type": "directory",
+        "name": "sysroot2",
+        "export": false,
+
+        "items": [
+            ["sysroot1", "/"],
+            ["glibc", "/"]
+        ]
+    },
+
+    // --------------------------------- ncurses
+    {
+        "type": "build-configure-make",
+        "name": "ncurses",
+        "export": false,
+
+        "sysroot": "sysroot2",
+        "sysroot_field_name": "with-sysroot",
+
+        "source": "source_ncurses",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--with-shared", "--without-cxx", "--without-cxx-binding", "--without-ada"]
     },
     {
         "type": "directory",
@@ -36,7 +65,8 @@
         "export": false,
 
         "items": [
-            ["glibc", "/"]
+            ["sysroot2", "/"],
+            ["ncurses", "/"]
         ]
     }
 ]

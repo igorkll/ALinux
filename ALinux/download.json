@@ -11,6 +11,8 @@
         "type": "unpack-tar-gz",
         "name": "source_unpacked_lua",
 
+        "strip_components": 1,
+
         "archive": "source_lua.tar.gz"
     },
     {
@@ -19,7 +21,7 @@
         "export": false,
 
         "source": "source_unpacked_lua",
-        "path": "/lua-5.3.6/src"
+        "path": "/src"
     },
 
     // bash
@@ -32,17 +34,11 @@
     },
     {
         "type": "unpack-tar-gz",
-        "name": "source_unpacked_bash",
+        "name": "source_bash",
+
+        "strip_components": 1,
 
         "archive": "source_bash.tar.gz"
-    },
-    {
-        "type": "from-directory",
-        "name": "source_bash",
-        "export": false,
-
-        "source": "source_unpacked_bash",
-        "path": "/bash-5.2"
     },
 
     // glibc
@@ -55,17 +51,28 @@
     },
     {
         "type": "unpack-tar-gz",
-        "name": "source_unpacked_glibc",
+        "name": "source_glibc",
+
+        "strip_components": 1,
 
         "archive": "source_glibc.tar.gz"
     },
+
+    // ncurses
     {
-        "type": "from-directory",
-        "name": "source_glibc",
+        "type": "download",
+        "name": "source_ncurses.tar.gz",
         "export": false,
 
-        "source": "source_unpacked_glibc",
-        "path": "/glibc-2.39"
+        "url": "https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_ncurses",
+
+        "strip_components": 1,
+
+        "archive": "source_ncurses.tar.gz"
     },
 
     // util-linux
@@ -78,16 +85,10 @@
     },
     {
         "type": "unpack-tar-gz",
-        "name": "source_unpacked_util_linux",
+        "name": "source_util_linux",
+
+        "strip_components": 1,
 
         "archive": "source_util_linux.tar.gz"
-    },
-    {
-        "type": "from-directory",
-        "name": "source_util_linux",
-        "export": false,
-
-        "source": "source_unpacked_util_linux",
-        "path": "/util-linux-2.41.3"
     }
 ]
