@@ -16,65 +16,9 @@
             "type": "include",
             "file": "sysroot.json"
         },
-
-        // --------------------------------- lua
         {
-            "type": "gcc-build",
-            "name": "lua",
-            "export": false,
-
-            "CFLAGS": [
-                "-O2",
-                "-ffreestanding",
-                "-Wall",
-                "-Wextra"
-            ],
-            "LDFLAGS": [
-                "-static",
-                "-Wl,--defsym=fmod=__ieee754_fmod", //FUCK.....
-                "-lm"
-            ],
-
-            "sources-dirs": ["source_lua"],
-            "sources-dirs-extensions": [".c", ".cpp"],
-            "sources-dirs-recursive": true,
-            "sources-dirs-exclude": ["luac.c"],
-
-            "forkbase": true
-        },
-        {
-            "fork": true,
-            "name": "luac",
-
-            "sources-dirs-exclude": ["lua.c"]
-        },
-
-        // --------------------------------- bash
-        {
-            "type": "build-configure-make",
-            "name": "bash",
-            "export": false,
-
-            "source": "source_bash",
-            "prefix": "/",
-
-            "CFLAGS": [],
-            "LDFLAGS": ["-static"],
-            "FLAGS": ["--enable-static-link", "--disable-nls"]
-        },
-
-        // --------------------------------- util linux
-        {
-            "type": "build-configure-make",
-            "name": "util_linux",
-            "export": false,
-
-            "source": "source_util_linux",
-            "prefix": "/",
-
-            "CFLAGS": ["-Wno-discarded-qualifiers"],
-            "LDFLAGS": ["-static"],
-            "FLAGS": ["--disable-login", "--disable-nls", "--without-python", "--without-systemd", "--without-systemdsystemunitdir"]
+            "type": "include",
+            "file": "packages.json"
         },
 
         // --------------------------------- rootfs

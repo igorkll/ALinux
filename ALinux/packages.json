@@ -1,0 +1,62 @@
+[
+    // --------------------------------- lua
+    {
+        "type": "gcc-build",
+        "name": "lua",
+        "export": false,
+
+        "sysroot": "sysroot",
+
+        "CFLAGS": [
+            "-O2",
+            "-Wall",
+            "-Wextra"
+        ],
+        "LDFLAGS": [
+            "-lm"
+        ],
+
+        "sources-dirs": ["source_lua"],
+        "sources-dirs-extensions": [".c", ".cpp"],
+        "sources-dirs-recursive": true,
+        "sources-dirs-exclude": ["luac.c"],
+
+        "forkbase": true
+    },
+    {
+        "fork": true,
+        "name": "luac",
+
+        "sources-dirs-exclude": ["lua.c"]
+    },
+
+    // --------------------------------- bash
+    {
+        "type": "build-configure-make",
+        "name": "bash",
+        "export": false,
+
+        "sysroot": "sysroot",
+
+        "source": "source_bash",
+        "prefix": "/",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
+    },
+
+    // --------------------------------- util linux
+    {
+        "type": "build-configure-make",
+        "name": "util_linux",
+        "export": false,
+
+        "source": "source_util_linux",
+        "prefix": "/",
+
+        "CFLAGS": ["-Wno-discarded-qualifiers"],
+        "LDFLAGS": ["-static"],
+        "FLAGS": ["--disable-login", "--disable-nls", "--without-python", "--without-systemd", "--without-systemdsystemunitdir"]
+    }
+]
