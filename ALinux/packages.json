@@ -40,14 +40,14 @@
         "sysroot_gcc_direct": true,
 
         "source": "source_bash",
-        "prefix": "/",
+        "prefix": "/usr",
 
         "CFLAGS": [],
         "LDFLAGS": [],
         "FLAGS": ["--disable-nls"]
     },
 
-    // --------------------------------- util linux
+    // --------------------------------- util-linux
     {
         "type": "build-configure-make",
         "name": "util_linux",
@@ -57,10 +57,27 @@
         "sysroot_gcc_direct_cmd": true,
 
         "source": "source_util_linux",
-        "prefix": "/",
+        "prefix": "/usr",
 
         "CFLAGS": ["-Wno-discarded-qualifiers"],
         "LDFLAGS": [],
-        "FLAGS": ["--disable-nls", "--disable-login", "--without-python", "--without-systemd", "--without-systemdsystemunitdir", "--disable-liblastlog2"]
+        "FLAGS": ["--disable-nls", "--without-python", "--without-systemd", "--without-systemdsystemunitdir", "--disable-liblastlog2"]
+    },
+
+    // --------------------------------- coreutils
+    {
+        "type": "build-configure-make",
+        "name": "coreutils",
+        "export": false,
+
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
+
+        "source": "source_coreutils",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": ["--disable-nls"]
     }
 ]

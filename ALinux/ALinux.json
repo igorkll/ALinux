@@ -42,12 +42,17 @@
                 ["lua", "/bin/lua", [0, 0, "755"]],
                 ["luac", "/bin/luac", [0, 0, "755"]],
 
+                ["coreutils", "/"],
                 ["util_linux", "/"],
                 ["bash", "/"]
             ],
 
             "delete": [
-                "/usr/include"
+                "/usr/include",
+                "/usr/bin/bashbug",
+                "/usr/share/doc",
+                "/usr/share/man",
+                "/usr/share/info"
             ]
         },
         {
@@ -58,7 +63,7 @@
             "source": "rootfs",
 
             "fs_type": "ext4",
-            "size": "64MB",
+            "size": "512MB",
             "label": "rootfs"
         },
         
