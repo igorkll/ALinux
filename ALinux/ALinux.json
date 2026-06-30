@@ -44,6 +44,10 @@
 
                 ["util_linux", "/"],
                 ["bash", "/"]
+            ],
+
+            "delete": [
+                "/usr/include"
             ]
         },
         {

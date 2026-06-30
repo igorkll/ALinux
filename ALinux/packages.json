@@ -37,6 +37,7 @@
         "export": false,
 
         "sysroot": "sysroot",
+        "sysroot_gcc_direct": true,
 
         "source": "source_bash",
         "prefix": "/",
@@ -52,11 +53,14 @@
         "name": "util_linux",
         "export": false,
 
+        "sysroot": "sysroot",
+        "sysroot_gcc_direct_cmd": true,
+
         "source": "source_util_linux",
         "prefix": "/",
 
         "CFLAGS": ["-Wno-discarded-qualifiers"],
         "LDFLAGS": ["-static"],
-        "FLAGS": ["--disable-login", "--disable-nls", "--without-python", "--without-systemd", "--without-systemdsystemunitdir"]
+        "FLAGS": ["--disable-login", "--disable-nls", "--without-python", "--without-systemd", "--without-systemdsystemunitdir", "--disable-liblastlog2"]
     }
 ]
