@@ -24,7 +24,7 @@
 
         "sysroot": "sysroot",
         "sysroot_gcc_direct": true,
-        "sysroot_auto_libs": true,
+        "sysroot_gcc_disable_default": true,
 
         "source": "source_nano",
         "prefix": "/usr",

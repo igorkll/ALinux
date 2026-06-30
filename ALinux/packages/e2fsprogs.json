@@ -24,6 +24,7 @@
 
         "sysroot": "sysroot",
         "sysroot_gcc_direct": true,
+        "sysroot_gcc_disable_default": true,
 
         "source": "source_e2fsprogs",
         "prefix": "/usr",

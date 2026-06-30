@@ -24,6 +24,11 @@
 
         "sysroot": "sysroot",
         "sysroot_gcc_direct_cmd": true,
+        "sysroot_gcc_disable_default": true,
+
+        "env_change": {
+            "PKG_CONFIG": ""
+        },
 
         "source": "source_util_linux",
         "prefix": "/usr",
