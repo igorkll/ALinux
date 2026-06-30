@@ -7,3 +7,4 @@ Build system: https://github.com/igorkll/syslbuild
 
 ## supported tools
 * lua / luac
+* bash
