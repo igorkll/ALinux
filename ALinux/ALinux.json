@@ -52,7 +52,8 @@
                 "/usr/bin/bashbug",
                 "/usr/share/doc",
                 "/usr/share/man",
-                "/usr/share/info"
+                "/usr/share/info",
+                "/var"
             ]
         },
         {
