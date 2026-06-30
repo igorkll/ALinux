@@ -45,6 +45,29 @@
         "path": "/bash-5.2"
     },
 
+    // glibc
+    {
+        "type": "download",
+        "name": "source_glibc.tar.gz",
+        "export": false,
+
+        "url": "https://ftp.gnu.org/gnu/glibc/glibc-2.39.tar.gz"
+    },
+    {
+        "type": "unpack-tar-gz",
+        "name": "source_unpacked_glibc",
+
+        "archive": "source_glibc.tar.gz"
+    },
+    {
+        "type": "from-directory",
+        "name": "source_glibc",
+        "export": false,
+
+        "source": "source_unpacked_glibc",
+        "path": "/glibc-2.39"
+    },
+
     // util-linux
     {
         "type": "download",

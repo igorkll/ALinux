@@ -12,20 +12,9 @@
             "type": "include",
             "file": "kernel.json"
         },
-
-        // --------------------------------- sysroot for build
         {
-            "type": "directory",
-            "name": "sysroot",
-            "export": false,
-
-            "directories": [
-                ["/usr", [0, 0, "755"]]
-            ],
-
-            "items": [
-                ["kernel_headers", "/usr"]
-            ]
+            "type": "include",
+            "file": "sysroot.json"
         },
 
         // --------------------------------- lua
@@ -102,7 +91,7 @@
 
             "items": [
                 ["sysroot", "/"],
-                
+
                 ["kernel.img", "/boot/kernel.img"],
                 ["init", "/init", [0, 0, "755"]],
 

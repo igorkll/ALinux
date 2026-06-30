@@ -1,0 +1,28 @@
+[
+    {
+        "type": "build-configure-make",
+        "name": "glibc",
+        "export": false,
+
+        "source": "source_glibc",
+        "prefix": "/usr",
+
+        "CFLAGS": [],
+        "LDFLAGS": [],
+        "FLAGS": []
+    },
+    {
+        "type": "directory",
+        "name": "sysroot",
+        "export": false,
+
+        "directories": [
+            ["/usr", [0, 0, "755"]]
+        ],
+
+        "items": [
+            ["kernel_headers", "/usr"],
+            ["glibc", "/"]
+        ]
+    }
+]
