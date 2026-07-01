@@ -1,4 +1,4 @@
-# ALinux
+# ALinux 1.0
 minimal linux build for my projects  
 Architecture: x86  
 Target firmware: BIOS / UEFI in legacy mode  
