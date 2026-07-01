@@ -27,6 +27,9 @@
         "sysroot_gcc_direct": true,
         "sysroot_auto_libs": true,
 
+        "sysroot_set_env_PKG_CONFIG_SYSROOT_DIR": true,
+        "sysroot_set_env_PKG_CONFIG_LIBDIR": true,
+
         "source": "source_nano",
         "prefix": "/usr",
 
