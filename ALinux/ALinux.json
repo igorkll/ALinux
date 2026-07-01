@@ -1,4 +1,6 @@
 {
+    "min-syslbuild-version": [1, 5, 4],
+    
     "architectures": [
         "i386"
     ],
